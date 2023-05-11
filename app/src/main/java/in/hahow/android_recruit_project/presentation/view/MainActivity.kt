@@ -18,6 +18,7 @@ import `in`.hahow.android_recruit_project.R
 import `in`.hahow.android_recruit_project.data.model.CourseResult
 import `in`.hahow.android_recruit_project.data.model.Result
 import `in`.hahow.android_recruit_project.data.repository.CourseDataLoaderImpl
+import `in`.hahow.android_recruit_project.domain.repository.CourseDataLoader
 import `in`.hahow.android_recruit_project.presentation.vm.CourseViewModel
 import `in`.hahow.android_recruit_project.presentation.vm.CourseViewModelProviderFactory
 
@@ -34,7 +35,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            val courseDataLoader = CourseDataLoaderImpl(this)
+            // define data loader implemented by data loader impl
+            val courseDataLoader: CourseDataLoader = CourseDataLoaderImpl(this)
             val viewModelProviderFactory = CourseViewModelProviderFactory(application, courseDataLoader)
             viewModel = ViewModelProvider(this, viewModelProviderFactory)[CourseViewModel::class.java]
             courseResult = viewModel.getCourseResult()

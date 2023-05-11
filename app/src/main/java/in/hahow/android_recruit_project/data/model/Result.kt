@@ -1,6 +1,6 @@
 package `in`.hahow.android_recruit_project.data.model
 
-// data status
+// define remote and local data status
 sealed class Result<out R> {
     data class Success<out T>(val data: T) : Result<T>()
     data class Fail(val error: String) : Result<Nothing>()

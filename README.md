@@ -1,6 +1,12 @@
 
 請使用 Kotlin 實作一個 app 首頁課程列表畫面，並寫文件或註解來解釋你的設計考量。除了指定需求外，你可以自由設計 model 和 UI 來提供更好的體驗。
 
+## 設計構想
+- 使用Clean Architecture資料夾分層
+- Data layer: 定義data response model以及實作抓取資料的data loader
+- Domain layer: 定義data loader interface讓view model呼叫
+- Presentation layer: 定義view model協助view拿資料，以及使用compose實作UI頁面、可重複使用的item card
+
 ## 技術規定
 - Deployment Target 為 Android 12。
 - 可使用第三方 library。
